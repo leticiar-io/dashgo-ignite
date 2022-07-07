@@ -5,7 +5,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* Conentando a fonte popoins da cuboh */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -16,19 +15,9 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
           />
-          {/* Conentando os ico do site */}
-
-          <link
-            rel="icon"
-            type="image/png"
-            href="ico/logoIcon.png"
-          />
           <meta charSet="utf-8" />
-          <meta name="theme-color" content="#ffffff" />
-          <meta
-            name="description"
-            content="Troqueiro"
-          />
+          
+          <title>dashgo.</title>
         </Head>
         <body>
           <Main />
