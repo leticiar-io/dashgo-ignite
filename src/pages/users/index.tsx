@@ -33,13 +33,16 @@ import { Sidebar } from "../../components/Sidebar";
 
 import { useQuery } from "react-query";
 import { api } from "../../services/api";
-import { useUsers } from "../../services/hooks/useUsers";
+import { getUsers, useUsers } from "../../services/hooks/useUsers";
 import { useState } from "react";
 import { queryClient } from "../../services/queryClient";
+import { GetServerSideProps } from "next";
 
-export default function UserList() {
+export default function UserList({ users }) {
   const [page, setPage] = useState(1);
-  const { data, isLoading, isFetching, refetch, error } = useUsers(page);
+  const { data, isLoading, isFetching, refetch, error } = useUsers(page, {
+    initialData: users,
+  });
 
   const isWideVersion = useBreakpointValue({
     base: false,
