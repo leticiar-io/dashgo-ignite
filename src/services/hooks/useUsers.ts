@@ -16,12 +16,12 @@ type GetUsersResponse = {
 export async function getUsers(page: number): Promise<GetUsersResponse> {
   const { data, headers } = await api.get("users", {
     params: {
-      page
+      page,
     }
   });
   const totalCount = Number(headers["x-total-count"]);
 
-  const users = data.users.map((user) => {
+  const users = data.users.map((user => {
     return {
       id: user.id,
       name: user.name,
@@ -32,7 +32,7 @@ export async function getUsers(page: number): Promise<GetUsersResponse> {
         year: "numeric"
       })
     };
-  });
+  }));
 
   return { users, totalCount };
 }
